@@ -1,8 +1,25 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+
+
+### Runtime data ###
+pids
+*.pid
+*.seed
+*.pid.lock
+__pycache__
+*.pyc
+*.pyd
+*.pyo
+
+### IDEs and code editors ###
+.idea/
+.idea_modules/
+.vscode/*
+.vs/
+nbproject/
+atlassian-ide-plugin.xml
+.sass-cache/
+build/*
+
+Thumbs.db
+.DS_Store
+

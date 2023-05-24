@@ -1,16 +1,21 @@
 import requests
 
-# Separate the data from the API
-EN_PAYLOAD = {'lang': 'en'}
-RU_PAYLOAD = {'lang': 'ru'}
-PLACES = {
-    'London': 'https://wttr.in/london?nTqu',
-    'SVO': 'https://wttr.in/svo?nTqu',
-    'Череповец': 'https://wttr.in/Череповец',
-}
 
-for place, url in PLACES.items():
-    payload = RU_PAYLOAD if place == 'Череповец' else EN_PAYLOAD
-    response = requests.get(f'{url}?MnqT' if place == 'Череповец' else url, params=payload)
-    response.raise_for_status()
-    print(response.text)
+def main():
+    url_temp = 'https://wttr.in/{}'
+    playload = {'lang': 'ru',
+                'M': '', ''
+                         'n': '',
+                'q': '',
+                'T': ''}
+    PLACES = ['Лондон', 'Шереметьево', 'Череповец']
+
+    for place in PLACES:
+        url = url_temp.format(place)
+        response = requests.get(url, params=playload)
+        response.raise_for_status()
+        print(response.text)
+
+
+if __name__ == '__main__':
+    main()
