@@ -3,14 +3,10 @@ import requests
 
 def main():
     url_temp = 'https://wttr.in/{}'
-    playload = {'lang': 'ru',
-                'M': '', ''
-                         'n': '',
-                'q': '',
-                'T': ''}
-    PLACES = ['Лондон', 'Шереметьево', 'Череповец']
+    playload = {'lang': 'ru', 'M': '', 'n': '', 'q': '', 'T': ''}
+    places = ['Лондон', 'Шереметьево', 'Череповец']
 
-    for place in PLACES:
+    for place in places:
         url = url_temp.format(place)
         response = requests.get(url, params=playload)
         response.raise_for_status()
